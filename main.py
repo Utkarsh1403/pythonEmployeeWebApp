@@ -1,15 +1,16 @@
-from flask import Flask
+from flask import Flask,render_template
 
 app = Flask(__name__)
 
 @app.route("/")
 def welcome():
 
-    return "Welcome to my website hima"
+    return "<h1>Welcome</h1>"
+
 @app.route("/contact")
 def ContactPage():
 
-    return "Contact page"
+    return render_template("contact.html")
 
 @app.route("/home")
 def Home():
@@ -22,4 +23,5 @@ def gallery():
     return "gallery"
 
 if __name__ == "__main__":
+
     app.run(debug=True)
